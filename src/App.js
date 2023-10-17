@@ -1,4 +1,3 @@
-import logo from "./logo.svg";
 import cube from "./content/cubee.webp";
 import "./App.css";
 import WordAnimation from "./components/AnimatedLetters";
