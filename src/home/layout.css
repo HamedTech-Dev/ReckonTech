@@ -1,0 +1,20 @@
+button.selected {
+  font-weight: 700;
+  color: var(--light);
+}
+
+div.cart {
+  border: transparent 1px solid;
+  border-radius: 10px;
+  display: flex;
+  padding: 5px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-color: var(--light);
+  column-gap: 20px;
+}
+
+div.cart > img {
+  border: transparent 1px solid;
+  border-radius: 10px;
+}
