@@ -4,6 +4,13 @@ import chevron from "../assets/icons/down-arrow.png";
 import abstract_image from "../assets/images/pexels-dids-3753025.jpg";
 import abstract_3d from "../assets/images/vecteezy_3d-fluid-glossy-shape_21879207_766.png";
 import abstract_3d_2 from "../assets/images/vecteezy_3d-abstract-background_17394964_192.png";
+import phone_icon from "../assets/icons/whatsapp.png";
+import email_icon from "../assets/icons/email.png";
+import instagram_icon from "../assets/icons/instagram.png";
+import linkedin_icon from "../assets/icons/linkedin.png";
+import ramin_profile from "../assets/images/ramin_profile.jpg";
+import hamed_profile from "../assets/images/Hamed_profile.JPG";
+import kurosh_profile from "../assets/images/kurosh_profile.jpg";
 import { Scroller } from "../utility/scroller";
 import "./layout.css";
 
@@ -26,6 +33,8 @@ function HomeLayout() {
         <Information setRef={getReferences} />
         <TeamInfo setRef={getReferences} />
         <Projects setRef={getReferences} />
+        <Polocy setRef={getReferences} />
+        <Footer />
       </div>
     </>
   );
@@ -105,7 +114,7 @@ function Logo({ setRef }) {
 
   useEffect(() => {
     setRef(ref, "Home");
-  }, []);
+  });
 
   return (
     <div
@@ -134,7 +143,7 @@ function Information({ setRef }) {
 
   useEffect(() => {
     setRef(ref, "About us");
-  }, []);
+  });
 
   return (
     <div
@@ -167,10 +176,47 @@ function Information({ setRef }) {
 
 function TeamInfo({ setRef }) {
   const ref = useRef(null);
+  const [members, setMembers] = useState({
+    previous: "hamed_profile",
+    main: "kurosh_profile",
+    next: "ramin_profile",
+    information: {
+      name: "Kurosh Zahle Rajabi",
+      description: "Front-end and Back-end Developer.",
+    },
+  });
 
   useEffect(() => {
     setRef(ref, "Team members");
-  }, []);
+
+    setTimeout(changeSequence,5000);
+  });
+
+  const changeSequence = () => {
+    let information;
+    if (members.information.name.includes("Kurosh"))
+      information = {
+        name: "Ramin Darudi",
+        description: "Back-end, Database and Wordpress Developer",
+      };
+    else if (members.information.name.includes("Ramin"))
+      information = {
+        name: "Hamed Ghasemi",
+        description: "Front-end, Wordpress and Back-end Developer",
+      };
+    else if (members.information.name.includes("Hamed"))
+      information = {
+        name: "Kurosh Zahle Rajabi",
+        description: "Front-end and Back-end Developer.",
+      };
+
+    setMembers({
+      previous: members.main,
+      main: members.next,
+      next: members.previous,
+      information: information
+    });
+  };
 
   return (
     <div
@@ -178,7 +224,35 @@ function TeamInfo({ setRef }) {
       ref={ref}
     >
       <Scroller down={false} />
-      <div className="h-5/6"></div>
+      <div className="h-5/6 w-full flex flex-col">
+        <h1 className="text-[3vw] font-bold text-[var(--drak)] h-1/6 text-center">
+          Team Members
+        </h1>
+        <div className="flex gap-5 h-4/6 scale-75 justify-center -mt-8">
+          <div
+            className={`side-member ${members.previous} w-1/3`}
+            hidden={false}
+            role="button"
+          ></div>
+          <div
+            className={`main-member ${members.main} w-1/3`}
+            hidden={false}
+          ></div>
+          <div
+            className={`side-member ${members.next} w-1/3`}
+            hidden={false}
+            role="button"
+          ></div>
+        </div>
+        <div className="h-1/6 w-full flex flex-col text-[var(--light)] relative bottom-5">
+          <h1 className="font-semi text-center text-[2.5vw] text-[var(--light)]">
+            {members.information.name}
+          </h1>
+          <span className="text-center text-[var(--dark)] opacity-75 text-[1.2vw]">
+            {members.information.description}
+          </span>
+        </div>
+      </div>
       <Scroller />
     </div>
   );
@@ -191,7 +265,7 @@ function Projects({ setRef }) {
 
   useEffect(() => {
     setRef(componentRef, "Our works");
-  }, []);
+  });
 
   const projects = [
     {
@@ -315,6 +389,102 @@ function Projects({ setRef }) {
         <Scroller className="ml-auto" />
       </div>
     </>
+  );
+}
+
+function Polocy({ setRef }) {
+  const ref = useRef(null);
+
+  useEffect(() => {
+    setRef(ref, "Polocy");
+  });
+
+  return (
+    <div
+      className="w-[100vw] h-[100vh] bg-[var(--grey)] flex flex-col px-10 items-end"
+      ref={ref}
+    >
+      <Scroller down={false} />
+      <h1 className="text-[5vw] text-[var(--light)] text-center w-full">
+        Polocy
+      </h1>
+      <p className="text-[2.5vw] text-[var(--light)]">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae numquam
+        nesciunt commodi qui repellendus quia quasi eveniet quod consequatur
+        aliquid optio tenetur, praesentium iure sunt dolorum incidunt maxime
+        illo. Incidunt! Lorem ipsum dolor sit amet consectetur adipisicing elit.
+        Beatae numquam nesciunt commodi qui repellendus quia quasi eveniet quod
+        consequatur aliquid optio tenetur, praesentium iure sunt dolorum
+        incidunt maxime illo. Incidunt! Lorem ipsum dolor sit amet consectetur
+        adipisicing elit. Beatae numquam nesciunt commodi qui repellendus quia
+        quasi eveniet quod consequatur aliquid optio tenetur, praesentium iure
+        sunt dolorum incidunt maxime illo. Incidunt!
+      </p>
+      <Scroller />
+    </div>
+  );
+}
+
+function Footer() {
+  const openLink = (link) => {
+    window.open(link, "_blank");
+  };
+
+  return (
+    <div className="w-[100vw] h-52 flex bg-[var(--dark)] p-10">
+      <div className="h-full w-1/2 flex flex-col gap-10 items-center">
+        <span
+          className="text-[var(--light)] text-[2.5vw] flex"
+          role="button"
+          onClick={() => {
+            openLink("https://wa.me/+46707240643");
+          }}
+        >
+          <img src={phone_icon} alt="phone_icon" className="mr-3 w-[4.5vw]" />
+          +46 70 724 06 43
+        </span>
+        <span
+          className="text-[var(--light)] text-[2.5vw] flex"
+          role="button"
+          onClick={() => {
+            openLink("mailto:reckontechco@gmail.com");
+          }}
+        >
+          <img src={email_icon} alt="email_icon" className="mr-3 w-[4.5vw]" />
+          reckontechco@gmail.com
+        </span>
+      </div>
+      <div className="h-full w-1/2 flex flex-col gap-10 items-center">
+        <span
+          className="text-[var(--light)] text-[2.5vw] flex"
+          role="button"
+          onClick={() => {
+            openLink("https://www.instagram.com/reckon.tech");
+          }}
+        >
+          <img
+            src={instagram_icon}
+            alt="instagram_icon"
+            className="mr-3 w-[4.5vw]"
+          />
+          reckon.tech
+        </span>
+        <span
+          className="text-[var(--light)] text-[2.5vw] flex"
+          role="button"
+          onClick={() => {
+            openLink("https://www.linkedin.com/company/reckontechy");
+          }}
+        >
+          <img
+            src={linkedin_icon}
+            alt="linkedin_icon"
+            className="mr-3 w-[4.5vw]"
+          />
+          reckontechy
+        </span>
+      </div>
+    </div>
   );
 }
 
