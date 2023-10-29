@@ -189,10 +189,10 @@ function TeamInfo({ setRef }) {
   useEffect(() => {
     setRef(ref, "Team members");
 
-    setTimeout(changeSequence,5000);
+    setTimeout(changeSequence, 5000);
   });
 
-  const changeSequence = () => {
+  const setInformation = () => {
     let information;
     if (members.information.name.includes("Kurosh"))
       information = {
@@ -210,11 +210,33 @@ function TeamInfo({ setRef }) {
         description: "Front-end and Back-end Developer.",
       };
 
+    return information;
+  };
+
+  const changeSequence = () => {
     setMembers({
       previous: members.main,
       main: members.next,
       next: members.previous,
-      information: information
+      information: setInformation(),
+    });
+  };
+
+  const onClick_next = (mode) => {
+    setMembers({
+      previous: members.main,
+      main: members.next,
+      next: members.previous,
+      information: setInformation(),
+    });
+  };
+
+  const onClick_previous = () => {
+    setMembers({
+      previous: members.next,
+      main: members.previous,
+      next: members.main,
+      information: setInformation(),
     });
   };
 
@@ -233,6 +255,7 @@ function TeamInfo({ setRef }) {
             className={`side-member ${members.previous} w-1/3`}
             hidden={false}
             role="button"
+            onClick={onClick_previous}
           ></div>
           <div
             className={`main-member ${members.main} w-1/3`}
@@ -242,6 +265,7 @@ function TeamInfo({ setRef }) {
             className={`side-member ${members.next} w-1/3`}
             hidden={false}
             role="button"
+            onClick={onClick_next}
           ></div>
         </div>
         <div className="h-1/6 w-full flex flex-col text-[var(--light)] relative bottom-5">
