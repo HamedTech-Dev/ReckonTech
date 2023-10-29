@@ -432,7 +432,7 @@ function Footer() {
 
   return (
     <div className="w-[100vw] h-52 flex bg-[var(--dark)] p-10">
-      <div className="h-full w-1/2 flex flex-col gap-10 items-center">
+      <div className="h-full w-1/2 flex flex-col gap-10 items-start pl-[10%]">
         <span
           className="text-[var(--light)] text-[2.5vw] flex"
           role="button"
