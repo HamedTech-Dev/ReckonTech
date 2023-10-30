@@ -8,9 +8,6 @@ import phone_icon from "../assets/icons/whatsapp.png";
 import email_icon from "../assets/icons/email.png";
 import instagram_icon from "../assets/icons/instagram.png";
 import linkedin_icon from "../assets/icons/linkedin.png";
-import ramin_profile from "../assets/images/ramin_profile.jpg";
-import hamed_profile from "../assets/images/Hamed_profile.JPG";
-import kurosh_profile from "../assets/images/kurosh_profile.jpg";
 import { Scroller } from "../utility/scroller";
 import "./layout.css";
 
@@ -177,12 +174,11 @@ function Information({ setRef }) {
 function TeamInfo({ setRef }) {
   const ref = useRef(null);
   const [members, setMembers] = useState({
-    previous: "hamed_profile",
-    main: "kurosh_profile",
-    next: "ramin_profile",
+    main: "main",
+    side: "side",
     information: {
       name: "Kurosh Zahle Rajabi",
-      description: "Front-end and Back-end Developer.",
+      description: "Front-end, Back-end and Wordpress Developer",
     },
   });
 
@@ -190,52 +186,41 @@ function TeamInfo({ setRef }) {
     setRef(ref, "Team members");
 
     setTimeout(changeSequence, 5000);
+    console.log("sosososo");
   });
 
   const setInformation = () => {
     let information;
-    if (members.information.name.includes("Kurosh"))
-      information = {
-        name: "Ramin Darudi",
-        description: "Back-end, Database and Wordpress Developer",
-      };
-    else if (members.information.name.includes("Ramin"))
-      information = {
-        name: "Hamed Ghasemi",
-        description: "Front-end, Wordpress and Back-end Developer",
-      };
-    else if (members.information.name.includes("Hamed"))
-      information = {
-        name: "Kurosh Zahle Rajabi",
-        description: "Front-end and Back-end Developer.",
-      };
 
+    const Ramins_info = {
+      name: "Ramin Darudi",
+      description: "Back-end, Database and Wordpress Developer",
+    };
+
+    const Kuroshs_info = {
+      name: "Kurosh Zhale Rajabi",
+      description: "Front-end, Back-end and Wordpress Developer",
+    };
+
+    if (members.information.name.includes("Kurosh")) 
+      information = Ramins_info;
+    else if (members.information.name.includes("Ramin"))
+      information = Kuroshs_info;
     return information;
   };
 
   const changeSequence = () => {
     setMembers({
-      previous: members.main,
-      main: members.next,
-      next: members.previous,
+      main: members.side,
+      side: members.main,
       information: setInformation(),
     });
   };
 
-  const onClick_next = (mode) => {
+  const onClick_side = () => {
     setMembers({
-      previous: members.main,
-      main: members.next,
-      next: members.previous,
-      information: setInformation(),
-    });
-  };
-
-  const onClick_previous = () => {
-    setMembers({
-      previous: members.next,
-      main: members.previous,
-      next: members.main,
+      main: members.side,
+      side: members.main,
       information: setInformation(),
     });
   };
@@ -252,20 +237,14 @@ function TeamInfo({ setRef }) {
         </h1>
         <div className="flex gap-5 h-4/6 scale-75 justify-center -mt-8">
           <div
-            className={`side-member ${members.previous} w-1/3`}
-            hidden={false}
-            role="button"
-            onClick={onClick_previous}
-          ></div>
-          <div
-            className={`main-member ${members.main} w-1/3`}
+            className={`kurosh_profile ${members.main} w-1/3`}
             hidden={false}
           ></div>
           <div
-            className={`side-member ${members.next} w-1/3`}
+            className={`ramin_profile ${members.side} w-1/3`}
             hidden={false}
             role="button"
-            onClick={onClick_next}
+            onClick={onClick_side}
           ></div>
         </div>
         <div className="h-1/6 w-full flex flex-col text-[var(--light)] relative bottom-5">

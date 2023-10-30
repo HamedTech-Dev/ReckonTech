@@ -19,40 +19,34 @@ div.cart > img {
   border-radius: 10px;
 }
 
-div.side-member {
+div.side {
   max-width: 300px;
   max-height: 300px;
   aspect-ratio: square;
-  border: transparent 1px solid;
-  border-radius: 999px;
   transform: scale(0.6);
   filter: brightness(0.5);
   transition: all 300ms linear;
 }
 
-div.main-member {
+div.main {
   max-width: 300px;
   max-height: 300px;
-  border: transparent 1px solid;
-  border-radius: 999px;
   aspect-ratio: square;
   transition: all 300ms linear;
-}
-
-div.hamed_profile {
-  background-image: url("../assets/images/Hamed_profile.JPG");
-  background-size: 300%;
-  background-position: 40% 45%;
 }
 
 div.kurosh_profile {
   background-image: url("../assets/images/kurosh_profile.jpg");
   background-size: 300%;
   background-position: 30% 20%;
+  border: transparent 1px solid;
+  border-radius: 999px;
 }
 
 div.ramin_profile {
   background-image: url("../assets/images/ramin_profile.jpg");
   background-size: cover;
   background-position: -10% 35%;
+  border: transparent 1px solid;
+  border-radius: 999px;
 }
