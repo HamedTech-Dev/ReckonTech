@@ -30,7 +30,7 @@ function HomeLayout() {
         <Information setRef={getReferences} />
         <TeamInfo setRef={getReferences} />
         <Projects setRef={getReferences} />
-        <Polocy setRef={getReferences} />
+        <Policy setRef={getReferences} />
         <Footer />
       </div>
     </>
@@ -172,57 +172,60 @@ function Information({ setRef }) {
 }
 
 function TeamInfo({ setRef }) {
+  const Ramins_info = {
+    name: "Ramin Darudi",
+    description: "Back-end, Database and Wordpress Developer",
+  };
+
+  const Kuroshs_info = {
+    name: "Kurosh Zhale Rajabi",
+    description: "Front-end, Back-end and Wordpress Developer",
+  };
+
+  const Hameds_info = {
+    name: "Hamed Ghasemi",
+    description: "Bussiness and Marketing Manager",
+  };
+
   const ref = useRef(null);
-  const [members, setMembers] = useState({
-    main: "main",
-    side: "side",
-    information: {
-      name: "Kurosh Zahle Rajabi",
-      description: "Front-end, Back-end and Wordpress Developer",
-    },
-  });
+  const [main, setMain] = useState(Ramins_info);
 
   useEffect(() => {
     setRef(ref, "Team members");
+    let timeout;
 
-    setTimeout(changeSequence, 5000);
-    console.log("sosososo");
+    if (timeout || timeout === 0) clearTimeout(timeout);
+    timeout = setTimeout(changeSequence, 5000);
   });
 
-  const setInformation = () => {
-    let information;
-
-    const Ramins_info = {
-      name: "Ramin Darudi",
-      description: "Back-end, Database and Wordpress Developer",
-    };
-
-    const Kuroshs_info = {
-      name: "Kurosh Zhale Rajabi",
-      description: "Front-end, Back-end and Wordpress Developer",
-    };
-
-    if (members.information.name.includes("Kurosh")) 
-      information = Ramins_info;
-    else if (members.information.name.includes("Ramin"))
-      information = Kuroshs_info;
-    return information;
-  };
-
   const changeSequence = () => {
-    setMembers({
-      main: members.side,
-      side: members.main,
-      information: setInformation(),
-    });
+    let main_member = main;
+
+    if (main_member.name.includes("Ramin")) main_member = Kuroshs_info;
+    else if (main_member.name.includes("Kurosh")) main_member = Hameds_info;
+    else if (main_member.name.includes("Hamed")) main_member = Ramins_info;
+
+    setMain(main_member);
   };
 
-  const onClick_side = () => {
-    setMembers({
-      main: members.side,
-      side: members.main,
-      information: setInformation(),
-    });
+  const onClick = (profile) => {
+    let main_member;
+
+    switch (profile) {
+      default:
+        break;
+      case "ramin":
+        main_member = Ramins_info;
+        break;
+      case "kurosh":
+        main_member = Kuroshs_info;
+        break;
+      case "hamed":
+        main_member = Hameds_info;
+        break;
+    }
+
+    setMain(main_member);
   };
 
   return (
@@ -231,28 +234,39 @@ function TeamInfo({ setRef }) {
       ref={ref}
     >
       <Scroller down={false} />
-      <div className="h-5/6 w-full flex flex-col">
-        <h1 className="text-[3vw] font-bold text-[var(--drak)] h-1/6 text-center">
+      <div className="h-5/6 w-full flex flex-col my-auto justify-center items-center">
+        <h1 className="h-1/3 text-[3vw] font-bold text-[var(--drak)] text-center">
           Team Members
         </h1>
-        <div className="flex gap-5 h-4/6 scale-75 justify-center -mt-8">
+        <div className="h-min w-full flex gap-5 justify-evenly laptop:px-32 items-center">
           <div
-            className={`kurosh_profile ${members.main} w-1/3`}
+            className={`ramin_profile ${
+              main.name === Ramins_info.name ? "main" : "side"
+            } w-[200px] h-[200px] pc:w-[500px] pc:h-[500px]`}
             hidden={false}
+            onClick={() => onClick("ramin")}
           ></div>
           <div
-            className={`ramin_profile ${members.side} w-1/3`}
+            className={`kurosh_profile ${
+              main.name === Kuroshs_info.name ? "main" : "side"
+            } w-[200px] h-[200px] pc:w-[500px] pc:h-[500px]`}
             hidden={false}
-            role="button"
-            onClick={onClick_side}
+            onClick={() => onClick("kurosh")}
+          ></div>
+          <div
+            className={`hamed_profile ${
+              main.name === Hameds_info.name ? "main" : "side"
+            } w-[200px] h-[200px] pc:w-[500px] pc:h-[500px]`}
+            hidden={false}
+            onClick={() => onClick("hamed")}
           ></div>
         </div>
-        <div className="h-1/6 w-full flex flex-col text-[var(--light)] relative bottom-5">
+        <div className="h-1/3 w-full flex flex-col items-center">
           <h1 className="font-semi text-center text-[2.5vw] text-[var(--light)]">
-            {members.information.name}
+            {main.name}
           </h1>
           <span className="text-center text-[var(--dark)] opacity-75 text-[1.2vw]">
-            {members.information.description}
+            {main.description}
           </span>
         </div>
       </div>
@@ -395,7 +409,7 @@ function Projects({ setRef }) {
   );
 }
 
-function Polocy({ setRef }) {
+function Policy({ setRef }) {
   const ref = useRef(null);
 
   useEffect(() => {
@@ -409,7 +423,7 @@ function Polocy({ setRef }) {
     >
       <Scroller down={false} />
       <h1 className="text-[5vw] text-[var(--light)] text-center w-full">
-        Polocy
+        Policy
       </h1>
       <p className="text-[2.5vw] text-[var(--light)]">
         Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae numquam
