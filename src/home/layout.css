@@ -6,7 +6,6 @@ button.selected {
 div.cart {
   border: transparent 1px solid;
   border-radius: 10px;
-  display: flex;
   padding: 5px;
   margin-top: 5px;
   margin-bottom: 5px;

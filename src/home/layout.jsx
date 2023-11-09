@@ -6,31 +6,58 @@ import Information from "./components/information";
 import Logo from "./components/logo";
 import NavBtns from "./components/nav-btns";
 import "./layout.css";
+import { useRef } from "react";
 
 function HomeLayout() {
-  const refrensList = [];
+  const PolicyRef = useRef(null);
+  const ProjectsRef = useRef(null);
+  const TeamInfoRef = useRef(null);
+  const InformationRef = useRef(null);
+  const LogoRef = useRef(null);
 
-  const getReferences = (ref, ref_name) => {
-    refrensList.push({ ref: ref, name: ref_name });
+  const refrensList = [
+    LogoRef,
+    InformationRef,
+    TeamInfoRef,
+    ProjectsRef,
+    PolicyRef,
+  ];
 
-    return refrensList;
-  };
-
-  return (
-    <>
-      <div className="w-max pr-[65%] pointer-events-none h-15 fixed top-0 left-0 bg-transparent flex justify-evenly z-10 backdrop-blur-lg">
-        <NavBtns refrensesList={refrensList} />
-      </div>
-      <div className="flex flex-col justify-evenly align-middle">
-        <Logo setRef={getReferences} />
-        <Information setRef={getReferences} />
-        <TeamInfo setRef={getReferences} />
-        <Projects setRef={getReferences} />
-        <Policy setRef={getReferences} />
-        <Footer />
-      </div>
-    </>
-  );
+  if (window.innerWidth > 425) {
+    return (
+      <>
+        <div className="w-max pr-[65%] pointer-events-none h-15 max-h-14 fixed top-0 left-0 bg-transparent flex justify-evenly z-10 backdrop-blur-lg">
+          <NavBtns refrensesList={refrensList} />
+        </div>
+        <div className="flex flex-col justify-evenly align-middle">
+          <Logo ref={LogoRef} />
+          <Information ref={InformationRef} />
+          <TeamInfo ref={TeamInfoRef} />
+          <Projects ref={ProjectsRef} />
+          <Policy ref={PolicyRef} />
+          <Footer />
+        </div>
+      </>
+    );
+  } else {
+    return (
+      <>
+        <div className="flex flex-col w-min h-min">
+          <div className="w-max pr-[65%] h-15 max-h-14 fixed top-0 left-0 bg-transparent flex justify-evenly z-10">
+            <NavBtns refrensesList={refrensList} />
+          </div>
+          <div className="flex flex-col justify-evenly align-middle">
+            <Logo ref={LogoRef} />
+            <Information ref={InformationRef} />
+            <TeamInfo ref={TeamInfoRef} />
+            <Projects ref={ProjectsRef} />
+            <Policy ref={PolicyRef} />
+            <Footer />
+          </div>
+        </div>
+      </>
+    );
+  }
 }
 
 export default HomeLayout;

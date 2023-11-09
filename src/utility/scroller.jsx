@@ -33,7 +33,7 @@ function Scroller({ down = true, className = "" }) {
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
         ref={iconRef}
-        className={`z-10 ${className}`}
+        className={`z-10 ${className} mobile:z-0`}
       />
     );
   } else {
@@ -42,7 +42,7 @@ function Scroller({ down = true, className = "" }) {
         src={icon}
         alt="scroller"
         width={70}
-        className={`rotate-180 z-10 ${className}`}
+        className={`rotate-180 z-10 mobile:z-0 ${className}`}
         onClick={onClick}
         onMouseEnter={onMouseEnter}
         onMouseLeave={onMouseLeave}
