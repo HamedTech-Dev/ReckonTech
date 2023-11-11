@@ -55,6 +55,7 @@ function NavBtns({ refrensesList }) {
 
   useEffect(() => {
     setBtnRefs();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [is_open, set_menu_state] = useState(false);
@@ -141,8 +142,14 @@ function NavBtns({ refrensesList }) {
                   }}
                   key={btn.key}
                 >
-                  <img src={btn.icon} alt="icon" width={40}/>
-                  <span className={`text-[var(--dark)] ${is_open? 'visible':'invisible'}`} >{btn.name}</span>
+                  <img src={btn.icon} alt="icon" width={40} />
+                  <span
+                    className={`text-[var(--dark)] ${
+                      is_open ? "visible" : "invisible"
+                    }`}
+                  >
+                    {btn.name}
+                  </span>
                 </button>
               );
             })}
