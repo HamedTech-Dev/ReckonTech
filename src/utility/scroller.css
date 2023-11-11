@@ -1,0 +1,39 @@
+@keyframes fade-in-out-down {
+  0% {
+    opacity: 50%;
+    transform: translateY(0px);
+  }
+
+  50% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0%;
+    transform: translateY(20px);
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 50%;
+    transform: translateY(0px) rotate(180deg);
+  }
+
+  50% {
+    opacity: 100%;
+  }
+
+  100% {
+    opacity: 0%;
+    transform: translateY(-20px) rotate(180deg);
+  }
+}
+
+img.scroller-down {
+  animation: fade-in-out-down 1000ms ease-out infinite forwards;
+}
+
+img.scroller-up {
+  animation: fade-in-up 1000ms ease-out infinite forwards;
+}

@@ -1,18 +1,13 @@
-import cube from "./content/cubee.webp";
 import "./App.css";
-import WordAnimation from "./components/AnimatedLetters";
+import HomeLayout from "./home/layout";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={cube} className="App-logo" alt="logo" />
+  window.addEventListener("wheel", function (event) {
+    event.preventDefault();
+    event.stopPropagation();
+  });
 
-        <WordAnimation />
-        <p>Coming soon...</p>
-      </header>
-    </div>
-  );
+  return <HomeLayout />;
 }
 
 export default App;
