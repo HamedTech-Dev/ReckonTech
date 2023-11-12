@@ -99,12 +99,12 @@ const Projects = forwardRef((props, componentRef) => {
           className="w-full h-5/6 flex justify-start items-start align-middle overflow-x-scroll overflow-y-hidden mobile:overflow-y-scroll mobile:overflow-x-hidden"
           ref={containerRef}
         >
-          <div className="h-full items-start w-max justify-start flex flex-nowrap mobile:gap-0 mobile:flex-col mobile:w-full mobile:h-max">
+          <div className="h-full items-start w-max justify-start flex flex-nowrap mobile:flex-col mobile:w-full mobile:h-max">
             {projects.map((project) => {
               return (
                 // carousel content container
                 <div
-                  className="flex w-[100vw] justify-evenly items-center mobile:flex-col mobile:align-middle mobile:justify-center px-10 "
+                  className="flex w-[100vw] justify-evenly items-center mobile:flex-col mobile:h-min px-10 my-20"
                   style={{
                     width: content_size.width,
                     height: content_size.height,
@@ -113,7 +113,7 @@ const Projects = forwardRef((props, componentRef) => {
                 >
                   {/* left/top chevron */}
                   <div
-                    className={`h-full w-1/5 mobile:h-1/6 mobile:mx-auto mobile:w-full flex items-center z-10 mr-5  mobile:hidden ${
+                    className={`h-full w-1/5 mobile:mx-auto mobile:w-full flex items-center z-10 mr-5  mobile:hidden ${
                       project.key - 1 >= 0 ? "visible" : "invisible"
                     }`}
                   >
@@ -134,7 +134,7 @@ const Projects = forwardRef((props, componentRef) => {
 
                   {/* cart container */}
                   <div
-                    className="w-3/5 h-full flex justify-center align-middle items-center p-5 mobile:w-full mobile:h-full mobile:justify-start"
+                    className="w-3/5 h-full flex justify-center align-middle items-center p-5 mobile:w-full mobile:justify-start my-10 mobile:h-min"
                     ref={projectsRefs.current[project.key]}
                   >
                     <div className="cart w-full h-full flex flex-row gap-x-3 mobile:gap-4 mobile:flex-col m-auto mobile:h-min">
