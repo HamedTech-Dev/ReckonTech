@@ -13,7 +13,7 @@ const Logo = forwardRef((props, ref) => {
         <img
           src={logo}
           alt="Logo"
-          className="relative mobile:self-center mobile:top-[33.33333%] mobile:w-[150%] fade-in"
+          className="relative mobile:self-center fade-in"
         />
       </div>
       <Scroller />

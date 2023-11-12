@@ -58,3 +58,11 @@ div.logo-container {
   background-repeat: no-repeat;
   background-position: 50% 100%;
 }
+
+
+@media screen and (min-device-width:320px) and (max-device-width:426px) {
+  div.logo-container {
+    background-size: contain;
+    background-position: 50%;
+  }
+}
