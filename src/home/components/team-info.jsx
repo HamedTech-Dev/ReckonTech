@@ -31,14 +31,13 @@ const TeamInfo = forwardRef((props, ref) => {
       setMain(main_member);
     };
 
-
     if (timeout || timeout === 0) clearTimeout(timeout);
     // eslint-disable-next-line react-hooks/exhaustive-deps
     timeout = setTimeout(changeSequence, 5000);
   });
 
   const onClick = (profile) => {
-    clearTimeout(timeout)
+    clearTimeout(timeout);
 
     let main_member;
 
@@ -65,7 +64,7 @@ const TeamInfo = forwardRef((props, ref) => {
       ref={ref}
       id="team-members"
     >
-      <Scroller down={false} />
+      <Scroller down={false} className="mobile:hidden" />
       <div className="h-5/6 w-full flex flex-col my-auto justify-center items-center mobile:align-top">
         <h1 className="h-1/3 text-[3vw] font-bold text-[var(--drak)] text-center mobile:text-[10vw] mobile:h-1/6">
           Team Members
@@ -102,7 +101,7 @@ const TeamInfo = forwardRef((props, ref) => {
           </span>
         </div>
       </div>
-      <Scroller />
+      <Scroller className="mobile:hidden" />
     </div>
   );
 });

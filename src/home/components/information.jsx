@@ -5,11 +5,11 @@ import abstract_3d from "../../assets/images/vecteezy_3d-fluid-glossy-shape_2187
 const Information = forwardRef((props, ref) => {
   return (
     <div
-      className="bg-[var(--secondary-dark)] w-[100vw] flex flex-col justify-between items-end mobile:items-center px-10 mobile:px-2 h-[100vh] mobile:flex-col "
+      className="bg-[var(--secondary-dark)] w-[100vw] flex flex-col justify-between items-end mobile:items-center px-10 mobile:px-2 h-[100vh] mobile:flex-col mobile:h-min"
       ref={ref}
       id="about-us"
     >
-      <Scroller down={false} ref={ref} />
+      <Scroller down={false} ref={ref} className="mobile:hidden"/>
       <div className="w-full h-4/6 mobile:h-full flex mobile:flex-col mobile:gap-y-5 mobile:items-start">
         <div className="w-1/2 flex justify-center items-center mobile:w-full mobile:h-1/2">
           <img src={abstract_3d} alt="info" />
@@ -28,7 +28,7 @@ const Information = forwardRef((props, ref) => {
           </p>
         </div>
       </div>
-      <Scroller />
+      <Scroller className="mobile:hidden" />
     </div>
   );
 });

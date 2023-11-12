@@ -88,7 +88,7 @@ const Projects = forwardRef((props, componentRef) => {
         <div className="mobile:bg-transparent mobile:backdrop-blur-xl">
           <Scroller
             down={false}
-            className="ml-auto mobile:mx-auto"
+            className="ml-auto mobile:mx-auto mobile:hidden"
             ref={componentRef}
           />
           <h1 className="text-[3vw] text-[var(--dark)] font-bold text-center w-full h-1/6 mobile:text-[10vw] mobile:h-min mobile:mb-5">
@@ -181,7 +181,7 @@ const Projects = forwardRef((props, componentRef) => {
           </div>
         </div>
 
-        <Scroller className="ml-auto mobile:mx-auto" />
+        <Scroller className="ml-auto mobile:mx-auto mobile:hidden" />
       </div>
     </>
   );
