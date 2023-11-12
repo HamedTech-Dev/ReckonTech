@@ -60,7 +60,7 @@ const TeamInfo = forwardRef((props, ref) => {
 
   return (
     <div
-      className="w-[100vw] h-[100vh] flex flex-col bg-[var(--tretry-light)] py-3 justify-between items-end mobile:items-center px-10"
+      className="w-[100vw] h-[100vh] flex flex-col bg-[var(--tretry-light)] py-3 justify-between items-end mobile:items-center px-10 mobile:h-max"
       ref={ref}
       id="team-members"
     >
