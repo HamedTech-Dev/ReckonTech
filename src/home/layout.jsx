@@ -26,7 +26,7 @@ function HomeLayout() {
   if (window.innerWidth > 425) {
     return (
       <>
-        <div className="w-max pr-[65%] pointer-events-none h-15 max-h-14 fixed top-0 left-0 bg-transparent flex justify-evenly z-10 backdrop-blur-lg">
+        <div className="w-[100vw] pointer-events-none h-15 max-h-14 fixed top-0 left-0 bg-transparent flex justify-evenly z-10 backdrop-blur-lg">
           <NavBtns refrensesList={refrensList} />
         </div>
         <div className="flex flex-col justify-evenly align-middle">
