@@ -29,8 +29,6 @@ const TeamInfo = forwardRef((props, ref) => {
       else if (main_member.name.includes("Hamed")) main_member = Ramins_info;
 
       setMain(main_member);
-
-      console.log(main);
     };
 
 
