@@ -18,25 +18,30 @@ const TeamInfo = forwardRef((props, ref) => {
   };
 
   const [main, setMain] = useState(Ramins_info);
+  let timeout;
 
   useEffect(() => {
-    let timeout;
+    const changeSequence = () => {
+      let main_member = main;
+
+      if (main_member.name.includes("Ramin")) main_member = Kuroshs_info;
+      else if (main_member.name.includes("Kurosh")) main_member = Hameds_info;
+      else if (main_member.name.includes("Hamed")) main_member = Ramins_info;
+
+      setMain(main_member);
+
+      console.log(main);
+    };
+
 
     if (timeout || timeout === 0) clearTimeout(timeout);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     timeout = setTimeout(changeSequence, 5000);
   });
 
-  const changeSequence = () => {
-    let main_member = main;
-
-    if (main_member.name.includes("Ramin")) main_member = Kuroshs_info;
-    else if (main_member.name.includes("Kurosh")) main_member = Hameds_info;
-    else if (main_member.name.includes("Hamed")) main_member = Ramins_info;
-
-    setMain(main_member);
-  };
-
   const onClick = (profile) => {
+    clearTimeout(timeout)
+
     let main_member;
 
     switch (profile) {
