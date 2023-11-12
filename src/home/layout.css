@@ -46,8 +46,23 @@ div.ramin_profile {
 }
 
 div.hamed_profile {
-  background-image: url('../assets/images/hamed_profile.jpg');
+  background-image: url("../assets/images/hamed_profile.jpg");
   background-size: cover;
   border: transparent 1px solid;
   border-radius: 999px;
+}
+
+div.logo-container {
+  background-image: url("../assets/images/vecteezy_3d-abstract-background_17394964_192.png");
+  background-size: 9in;
+  background-repeat: no-repeat;
+  background-position: 50% 100%;
+}
+
+
+@media screen and (min-device-width:320px) and (max-device-width:426px) {
+  div.logo-container {
+    background-size: contain;
+    background-position: 50%;
+  }
 }
