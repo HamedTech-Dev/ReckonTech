@@ -15,7 +15,7 @@ const Information = forwardRef((props, ref) => {
           <img src={abstract_3d} alt="info" />
         </div>
         <div className="w-1/2 flex flex-col align-middle justify-center mobile:w-full mobile:h-2/3">
-          <h1 className="font-bold text-[3vw] mobile:text-[10vw] mobile:text-center text-[var(--dark)] indent-3 mb-3">
+          <h1 className="font-bold text-[4vw] mobile:text-[10vw] mobile:text-center text-[var(--dark)] -indent-2 mb-3">
             About us
           </h1>
           <p className="text-[2vw] mobile:text-[7.2vw] mobile:pl-5">
