@@ -18,25 +18,27 @@ const TeamInfo = forwardRef((props, ref) => {
   };
 
   const [main, setMain] = useState(Ramins_info);
+  let timeout;
 
   useEffect(() => {
-    let timeout;
+    const changeSequence = () => {
+      let main_member = main;
+
+      if (main_member.name.includes("Ramin")) main_member = Kuroshs_info;
+      else if (main_member.name.includes("Kurosh")) main_member = Hameds_info;
+      else if (main_member.name.includes("Hamed")) main_member = Ramins_info;
+
+      setMain(main_member);
+    };
 
     if (timeout || timeout === 0) clearTimeout(timeout);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     timeout = setTimeout(changeSequence, 5000);
   });
 
-  const changeSequence = () => {
-    let main_member = main;
-
-    if (main_member.name.includes("Ramin")) main_member = Kuroshs_info;
-    else if (main_member.name.includes("Kurosh")) main_member = Hameds_info;
-    else if (main_member.name.includes("Hamed")) main_member = Ramins_info;
-
-    setMain(main_member);
-  };
-
   const onClick = (profile) => {
+    clearTimeout(timeout);
+
     let main_member;
 
     switch (profile) {
@@ -58,11 +60,11 @@ const TeamInfo = forwardRef((props, ref) => {
 
   return (
     <div
-      className="w-[100vw] h-[100vh] flex flex-col bg-[var(--tretry-light)] py-3 justify-between items-end mobile:items-center px-10"
+      className="w-[100vw] h-[100vh] flex flex-col bg-[var(--tretry-light)] py-3 justify-between items-end mobile:items-center px-10 mobile:h-max"
       ref={ref}
       id="team-members"
     >
-      <Scroller down={false} />
+      <Scroller down={false} className="mobile:hidden" />
       <div className="h-5/6 w-full flex flex-col my-auto justify-center items-center mobile:align-top">
         <h1 className="h-1/3 text-[3vw] font-bold text-[var(--drak)] text-center mobile:text-[10vw] mobile:h-1/6">
           Team Members
@@ -99,7 +101,7 @@ const TeamInfo = forwardRef((props, ref) => {
           </span>
         </div>
       </div>
-      <Scroller />
+      <Scroller className="mobile:hidden" />
     </div>
   );
 });

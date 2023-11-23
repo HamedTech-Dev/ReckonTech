@@ -6,7 +6,7 @@ import info_icon from "../../assets/icons/information.png";
 import policy_icon from "../../assets/icons/policy.png";
 import projects_icon from "../../assets/icons/projects.png";
 
-function NavBtns({ refrensesList }) {
+function  NavBtns({ refrensesList }) {
   const [navBtns, setNavBtns] = useState([
     {
       key: 0,
@@ -55,6 +55,7 @@ function NavBtns({ refrensesList }) {
 
   useEffect(() => {
     setBtnRefs();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const [is_open, set_menu_state] = useState(false);
@@ -85,7 +86,7 @@ function NavBtns({ refrensesList }) {
         {navBtns.map((btn) => {
           return (
             <button
-              className={`bg-transparent text-[var(--dark)] py-2 px-3 m-2 text-center transition-all text-xl font-semibold pointer-events-auto ${
+              className={`bg-transparent text-[var(--dark)] py-2 px-3 m-2 text-center transition-all text-2xl font-semibold pointer-events-auto ${
                 navBtns[btn.key].selected ? "selected" : ""
               }`}
               onClick={() => {
@@ -141,8 +142,14 @@ function NavBtns({ refrensesList }) {
                   }}
                   key={btn.key}
                 >
-                  <img src={btn.icon} alt="icon" width={40}/>
-                  <span className={`text-[var(--dark)] ${is_open? 'visible':'invisible'}`} >{btn.name}</span>
+                  <img src={btn.icon} alt="icon" width={40} />
+                  <span
+                    className={`text-[var(--dark)] ${
+                      is_open ? "visible" : "invisible"
+                    }`}
+                  >
+                    {btn.name}
+                  </span>
                 </button>
               );
             })}
