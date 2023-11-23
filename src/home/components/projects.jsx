@@ -1,6 +1,5 @@
 import { useRef, forwardRef, useState, useEffect } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { Scroller } from "../../utility/scroller";
 import chevron from "../../assets/icons/down-arrow.png";
 import abstract_image from "../../assets/images/pexels-dids-3753025.jpg";
 
@@ -82,16 +81,12 @@ const Projects = forwardRef((props, componentRef) => {
   return (
     <>
       <div
-        className="w-[100vw] h-[100vh] bg-[var(--primary-dark)] flex flex-col justify-start mobile:justify-start overflow-x-scroll"
+        className="w-full min-h-full bg-[var(--primary-dark)] flex flex-col justify-start mobile:justify-start overflow-x-scroll snap-start"
         ref={componentRef}
         id="projects"
       >
         <div className="mobile:bg-transparent mobile:backdrop-blur-xl">
-          <Scroller
-            down={false}
-            className="ml-auto mobile:mx-auto mobile:hidden"
-            ref={componentRef}
-          />
+          
           <h1 className="text-[3vw] text-[var(--dark)] font-bold text-center w-full h-1/6 mobile:text-[10vw] mobile:h-min mobile:mb-5">
             Projects
           </h1>
@@ -186,8 +181,6 @@ const Projects = forwardRef((props, componentRef) => {
             })}
           </div>
         </div>
-
-        <Scroller className="ml-auto mobile:mx-auto mobile:hidden" />
       </div>
     </>
   );

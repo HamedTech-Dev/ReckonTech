@@ -1,17 +1,15 @@
 import { forwardRef } from "react";
-import { Scroller } from "../../utility/scroller";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import abstract_3d from "../../assets/images/vecteezy_3d-fluid-glossy-shape_21879207_766.png";
 
 const Information = forwardRef((props, ref) => {
   return (
     <div
-      className="bg-[var(--secondary-dark)] w-[100vw] flex flex-col justify-between items-end mobile:items-center px-10 mobile:px-2 h-[100vh] mobile:flex-col mobile:h-min"
+      className="bg-[var(--secondary-dark)] w-full min-h-full flex flex-col justify-between items-end mobile:items-center px-10 mobile:px-2 mobile:flex-col mobile:h-min snap-start"
       ref={ref}
       id="about-us"
     >
-      <Scroller down={false} ref={ref} className="mobile:hidden" />
-      <div className="w-full h-4/6 mobile:h-full flex mobile:flex-col mobile:gap-y-5 mobile:items-start">
+      <div className="w-full h-full mobile:h-full flex mobile:flex-col mobile:gap-y-5 mobile:items-start">
         <div className="w-1/2 flex justify-center items-center mobile:w-full mobile:h-1/2">
           <LazyLoadImage src={abstract_3d} alt="info" loading="lazy" />
         </div>
@@ -29,7 +27,6 @@ const Information = forwardRef((props, ref) => {
           </p>
         </div>
       </div>
-      <Scroller className="mobile:hidden" />
     </div>
   );
 });

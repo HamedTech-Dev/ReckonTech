@@ -1,15 +1,13 @@
 import { forwardRef } from "react";
-import { Scroller } from "../../utility/scroller";
 
 const Policy = forwardRef((props, ref) => {
   return (
     <div
-      className="w-[100vw] h-[100vh] bg-[var(--grey)] flex flex-col px-10 items-end mobile:items-center"
+      className="w-full min-h-full bg-[var(--grey)] flex flex-col px-10 items-end mobile:items-center snap-start"
       ref={ref}
       id="policy"
     >
-      <Scroller down={false} className="mobile:hidden" />
-      <h1 className="text-[4vw] text-[var(--light)] mobile:text-[10vw] text-center w-full mb-5">
+      <h1 className="text-[4vw] text-[var(--light)] mobile:text-[10vw] text-center w-full mt-12 mb-5">
         Policy
       </h1>
       <article className="mobile:flex-col mobile:flex-nowrap mobile:overflow-y-auto flex flex-wrap mobile:px-0 px-20 h-5/6">

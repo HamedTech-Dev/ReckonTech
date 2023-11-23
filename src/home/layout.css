@@ -54,9 +54,9 @@ div.hamed_profile {
 
 div.logo-container {
   background-image: url("../assets/images/vecteezy_3d-abstract-background_17394964_192.png");
-  background-size: 9in;
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: 50% 100%;
+  background-position: 50%;
 }
 
 

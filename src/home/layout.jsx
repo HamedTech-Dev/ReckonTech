@@ -29,7 +29,7 @@ function HomeLayout() {
         <div className="w-[100vw] pointer-events-none h-15 max-h-14 fixed top-0 left-0 bg-transparent flex justify-evenly z-10 backdrop-blur-lg">
           <NavBtns refrensesList={refrensList} />
         </div>
-        <div className="flex flex-col justify-evenly align-middle">
+        <div className="flex flex-col justify-start align-middle overflow-y-scroll overflow-x-hidden snap-y snap-mandatory scroll-smooth w-[100vw] h-[100vh]">
           <Logo ref={LogoRef} />
           <Information ref={InformationRef} />
           <TeamInfo ref={TeamInfoRef} />

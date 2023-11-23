@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 body {
-  margin: 0;
+  margin: 0px;
   font-family: "Laachir Deeper", sans-serif;
-  overflow-x: hidden;
+  overflow: hidden;
 }
 
 *::-webkit-scrollbar{

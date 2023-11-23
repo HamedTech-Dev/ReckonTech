@@ -1,5 +1,4 @@
 import { useState, useEffect, forwardRef } from "react";
-import { Scroller } from "../../utility/scroller";
 
 const TeamInfo = forwardRef((props, ref) => {
   const Ramins_info = {
@@ -60,11 +59,10 @@ const TeamInfo = forwardRef((props, ref) => {
 
   return (
     <div
-      className="w-[100vw] h-[100vh] flex flex-col bg-[var(--tretry-light)] py-3 justify-between items-end mobile:items-center px-10 mobile:h-max"
+      className="w-full min-h-full flex flex-col bg-[var(--tretry-light)] py-3 justify-between items-end mobile:items-center px-10 mobile:h-max snap-start"
       ref={ref}
       id="team-members"
     >
-      <Scroller down={false} className="mobile:hidden" />
       <div className="h-5/6 w-full flex flex-col my-auto justify-center items-center mobile:align-top">
         <h1 className="h-1/3 text-[3vw] font-bold text-[var(--drak)] text-center mobile:text-[10vw] mobile:h-1/6">
           Team Members
@@ -101,7 +99,6 @@ const TeamInfo = forwardRef((props, ref) => {
           </span>
         </div>
       </div>
-      <Scroller className="mobile:hidden" />
     </div>
   );
 });
