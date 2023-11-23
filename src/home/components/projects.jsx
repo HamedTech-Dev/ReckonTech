@@ -1,4 +1,5 @@
 import { useRef, forwardRef, useState, useEffect } from "react";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Scroller } from "../../utility/scroller";
 import chevron from "../../assets/icons/down-arrow.png";
 import abstract_image from "../../assets/images/pexels-dids-3753025.jpg";
@@ -139,7 +140,12 @@ const Projects = forwardRef((props, componentRef) => {
                   >
                     <div className="cart w-full h-full flex flex-row gap-x-3 mobile:gap-4 mobile:flex-col m-auto mobile:h-min">
                       {/* conetnt image container */}
-                      <img src={project.image} alt="project-look" width={450} loading="lazy"/>
+                      <LazyLoadImage
+                        src={project.image}
+                        alt="project-look"
+                        width={450}
+                        loading="lazy"
+                      />
 
                       {/* content container */}
                       <div className="flex h-full flex-col w-2/3 mobile:w-full mobile:h-2/3 mobile:px-3 mobile:pb-4">
