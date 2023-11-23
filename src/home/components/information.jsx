@@ -12,7 +12,7 @@ const Information = forwardRef((props, ref) => {
       <Scroller down={false} ref={ref} className="mobile:hidden"/>
       <div className="w-full h-4/6 mobile:h-full flex mobile:flex-col mobile:gap-y-5 mobile:items-start">
         <div className="w-1/2 flex justify-center items-center mobile:w-full mobile:h-1/2">
-          <img src={abstract_3d} alt="info" />
+          <img src={abstract_3d} alt="info" loading="lazy" />
         </div>
         <div className="w-1/2 flex flex-col align-middle justify-center mobile:w-full mobile:h-2/3">
           <h1 className="font-bold text-[4vw] mobile:text-[10vw] mobile:text-center text-[var(--dark)] -indent-2 mb-3">

@@ -127,7 +127,7 @@ const Projects = forwardRef((props, componentRef) => {
                         src={chevron}
                         width={window.innerWidth > 564 ? 500 : 80}
                         alt="left"
-                        className="rotate-90 mobile:rotate-180 scale-[0.25]"
+                        className="rotate-90 mobile:rotate-180 scale-[0.25] z-10"
                       />
                     </button>
                   </div>
@@ -139,7 +139,7 @@ const Projects = forwardRef((props, componentRef) => {
                   >
                     <div className="cart w-full h-full flex flex-row gap-x-3 mobile:gap-4 mobile:flex-col m-auto mobile:h-min">
                       {/* conetnt image container */}
-                      <img src={project.image} alt="project-look" width={450} />
+                      <img src={project.image} alt="project-look" width={450} loading="lazy"/>
 
                       {/* content container */}
                       <div className="flex h-full flex-col w-2/3 mobile:w-full mobile:h-2/3 mobile:px-3 mobile:pb-4">
@@ -171,7 +171,7 @@ const Projects = forwardRef((props, componentRef) => {
                         src={chevron}
                         width={window.innerWidth > 564 ? 500 : 80}
                         alt="right"
-                        className="-rotate-90 mobile:rotate-0"
+                        className="-rotate-90 mobile:rotate-0 z-10"
                       />
                     </button>
                   </div>
