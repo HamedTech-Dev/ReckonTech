@@ -42,11 +42,11 @@ function HomeLayout() {
   } else {
     return (
       <>
-        <div className="flex flex-col w-min h-min">
+        <div className="flex flex-col w-[100vw] h-min">
           <div className="w-max pr-[65%] h-15 max-h-14 fixed top-0 left-0 bg-transparent flex justify-evenly z-10">
             <NavBtns refrensesList={refrensList} />
           </div>
-          <div className="flex flex-col justify-evenly align-middle">
+          <div className="flex flex-col justify-start align-middle overflow-x-hidden overflow-y-scroll snap-y snap-mandatory scroll-smooth w-[100vw] h-[100vh]">
             <Logo ref={LogoRef} />
             <Information ref={InformationRef} />
             <TeamInfo ref={TeamInfoRef} />
