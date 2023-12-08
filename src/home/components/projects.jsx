@@ -79,12 +79,12 @@ const Projects = forwardRef((props, componentRef) => {
             />
           </button>
           <div
-            className="w-2/3 h-full overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth flex flex-nowrap justify-start gap-5 p-5"
+            className="w-2/3 h-full overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth flex flex-nowrap justify-start gap-6 p-5"
             ref={containerRef}
           >
             {projects.map((project) => {
               return (
-                <div className="cart min-w-full h-full flex gap-x-3 mobile:gap-4 mobile:flex-col mobile:h-min mobile:max-h-full snap-center">
+                <div className="cart min-w-full self-center max-h-[750px] h-full flex gap-x-3 mobile:gap-4 mobile:flex-col mobile:h-min mobile:max-h-full snap-center">
                   {/* conetnt image container */}
                   <div
                     className="w-1/3 h-full mobile:w-full mobile:h-1/3 transition-all cursor-pointer"
@@ -102,7 +102,7 @@ const Projects = forwardRef((props, componentRef) => {
                     />
                   </div>
                   {/* content container */}
-                  <div className="flex h-full flex-col w-2/3 mobile:w-full mobile:h-2/3 mobile:px-3 mobile:pb-4">
+                  <div className="flex h-full flex-col w-2/3 mobile:w-full mobile:h-2/3 mobile:px-3 mobile:pb-4 mobile:overflow-y-auto">
                     <h1 className="text-[3vw] font-semibold mobile:mb-3 mobile:text-[8vw] text-[var(--dark)] mobile:text-center">
                       {project.name}
                     </h1>
