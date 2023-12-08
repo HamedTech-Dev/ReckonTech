@@ -79,7 +79,7 @@ const Projects = forwardRef((props, componentRef) => {
             />
           </button>
           <div
-            className="w-2/3 h-full overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth flex flex-nowrap justify-start gap-5 p-5"
+            className="w-2/3 h-full overflow-x-auto overflow-y-hidden snap-x snap-mandatory scroll-smooth flex flex-nowrap justify-start gap-6 p-5"
             ref={containerRef}
           >
             {projects.map((project) => {
