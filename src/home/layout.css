@@ -13,9 +13,8 @@ div.cart {
   column-gap: 20px;
 }
 
-div.cart > img {
-  border: transparent 1px solid;
-  border-radius: 10px;
+div#image-container.clicked {
+  width: 70%;
 }
 
 div.side {
@@ -64,5 +63,9 @@ div.logo-container {
   div.logo-container {
     background-size: contain;
     background-position: 50%;
+  }
+
+  div#image-container.clicked {
+    height: 70%;
   }
 }

@@ -106,10 +106,10 @@ function  NavBtns({ refrensesList }) {
       <>
         {/* toolbar container */}
         <div
-          className="w-full h-full flex pl-3 pt-1 align-middle justify-evenly"
+          className="w-max h-full flex pl-3 pt-1 align-middle justify-start z-10"
           onClick={on_click_menu}
         >
-          <img src={menu_icon} alt="menu_icon" role="button" />
+          <img src={menu_icon} alt="menu_icon" role="button"/>
         </div>
 
         {/* menu container */}

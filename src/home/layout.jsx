@@ -25,10 +25,10 @@ function HomeLayout() {
 
   return (
     <>
-      <div className="w-[100vw] mobile:w-max mobile:pr-[65%] pointer-events-none h-15 fixed top-0 left-0 bg-transparent flex justify-evenly z-10 backdrop-blur-lg">
+      <div className="w-[100vw] h-15 fixed top-0 left-0 bg-transparent flex justify-evenly mobile:justify-start z-20 backdrop-blur-lg mobile:backdrop-blur-none">
         <NavBtns refrensesList={refrensList} />
       </div>
-      <div className="flex flex-col justify-start align-middle overflow-y-scroll overflow-x-hidden snap-y snap-mandatory scroll-smooth w-[100vw]  h-[100vh]">
+      <div className="flex flex-col justify-start align-middle overflow-y-scroll overflow-x-hidden snap-y snap-mandatory scroll-smooth w-[100vw] h-[100vh]">
         <Logo ref={LogoRef} />
         <Information ref={InformationRef} />
         <TeamInfo ref={TeamInfoRef} />
