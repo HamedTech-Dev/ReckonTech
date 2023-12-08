@@ -1,4 +1,4 @@
-import { useRef, forwardRef, useState, useEffect } from "react";
+import { useRef, forwardRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import chevron from "../../assets/icons/down-arrow.png";
 import abstract_image from "../../assets/images/pexels-dids-3753025.jpg";
