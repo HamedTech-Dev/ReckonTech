@@ -13,9 +13,8 @@ div.cart {
   column-gap: 20px;
 }
 
-div.cart > img {
-  border: transparent 1px solid;
-  border-radius: 10px;
+div#image-container.clicked {
+  width: 70%;
 }
 
 div.side {
@@ -54,9 +53,9 @@ div.hamed_profile {
 
 div.logo-container {
   background-image: url("../assets/images/vecteezy_3d-abstract-background_17394964_192.png");
-  background-size: 9in;
+  background-size: contain;
   background-repeat: no-repeat;
-  background-position: 50% 100%;
+  background-position: 50%;
 }
 
 
@@ -64,5 +63,9 @@ div.logo-container {
   div.logo-container {
     background-size: contain;
     background-position: 50%;
+  }
+
+  div#image-container.clicked {
+    height: 70%;
   }
 }
