@@ -102,7 +102,7 @@ const Projects = forwardRef((props, componentRef) => {
                     />
                   </div>
                   {/* content container */}
-                  <div className="flex h-full flex-col w-2/3 mobile:w-full mobile:h-2/3 mobile:px-3 mobile:pb-4">
+                  <div className="flex h-full flex-col w-2/3 mobile:w-full mobile:h-2/3 mobile:px-3 mobile:pb-4 mobile:overflow-y-auto">
                     <h1 className="text-[3vw] font-semibold mobile:mb-3 mobile:text-[8vw] text-[var(--dark)] mobile:text-center">
                       {project.name}
                     </h1>
