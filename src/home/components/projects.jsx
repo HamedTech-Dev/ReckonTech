@@ -84,7 +84,7 @@ const Projects = forwardRef((props, componentRef) => {
           >
             {projects.map((project) => {
               return (
-                <div className="cart min-w-full h-full flex gap-x-3 mobile:gap-4 mobile:flex-col mobile:h-min mobile:max-h-full snap-center">
+                <div className="cart min-w-full self-center max-h-[750px] h-full flex gap-x-3 mobile:gap-4 mobile:flex-col mobile:h-min mobile:max-h-full snap-center">
                   {/* conetnt image container */}
                   <div
                     className="w-1/3 h-full mobile:w-full mobile:h-1/3 transition-all cursor-pointer"
