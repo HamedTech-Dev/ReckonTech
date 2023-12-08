@@ -37,7 +37,7 @@ function Footer() {
           reckontechy
         </span>
       </div>
-      <div className="h-full w-1/2 flex flex-col gap-10 items-center mobile:w-full mobile:items-start mobile:pl-[10%] mobile:gap-5 mobile:mt-5 mobile:mb-3">
+      <div className="h-full w-1/2 pl-12 flex flex-col gap-10 items-start mr-auto mobile:w-full mobile:items-start mobile:pl-[10%] mobile:gap-5 mobile:mt-5 mobile:mb-3">
         <span
           className="text-[var(--light)] text-[2.5vw] flex mobile:text-[7vw]"
           role="button"
