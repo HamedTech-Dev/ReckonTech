@@ -6,7 +6,7 @@ import info_icon from "../../assets/icons/information.png";
 import policy_icon from "../../assets/icons/policy.png";
 import projects_icon from "../../assets/icons/projects.png";
 
-function  NavBtns({ refrensesList }) {
+function NavBtns({ refrensesList }) {
   const [navBtns, setNavBtns] = useState([
     {
       key: 0,
@@ -86,8 +86,8 @@ function  NavBtns({ refrensesList }) {
         {navBtns.map((btn) => {
           return (
             <button
-              className={`bg-transparent text-[var(--dark)] py-2 px-3 m-2 text-center transition-all text-2xl font-semibold pointer-events-auto ${
-                navBtns[btn.key].selected ? "selected" : ""
+              className={`bg-transparent text-[var(--light)] py-2 px-3 m-2 text-center transition-all text-2xl font-semibold pointer-events-auto  ${
+                navBtns[btn.key].selected ? "invert" : "invert-0"
               }`}
               onClick={() => {
                 navigate(btn);
@@ -109,7 +109,7 @@ function  NavBtns({ refrensesList }) {
           className="w-max h-full flex pl-3 pt-1 align-middle justify-start z-10"
           onClick={on_click_menu}
         >
-          <img src={menu_icon} alt="menu_icon" role="button"/>
+          <img src={menu_icon} alt="menu_icon" role="button" />
         </div>
 
         {/* menu container */}

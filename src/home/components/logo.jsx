@@ -1,5 +1,4 @@
 import { forwardRef } from "react";
-import logo from "../../assets/images/IMG_0578-removebg-preview.png";
 
 const Logo = forwardRef((props, ref) => {
   return (
@@ -8,14 +7,7 @@ const Logo = forwardRef((props, ref) => {
       ref={ref}
       id="home"
     >
-      <div className=" w-full mt-20 h-5/6 flex flex-col justify-center items-center logo-container">
-        <img
-          src={logo}
-          alt="Logo"
-          className="relative mobile:self-center fade-in"
-          width={300}
-        />
-      </div>
+      <div className=" w-full mt-20 h-5/6 flex flex-col justify-center items-center logo-container"></div>
     </div>
   );
 });
