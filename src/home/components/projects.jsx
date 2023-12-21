@@ -1,11 +1,10 @@
 import { useRef, forwardRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import chevron from "../../assets/icons/down-arrow.png";
-import abstract_image from "../../assets/images/pexels-dids-3753025.jpg";
-import project_1 from '../../assets/images/1.png';
-import project_2 from '../../assets/images/2.png';
-import project_3 from '../../assets/images/Aesthetic_New_Product_Laptop_Mockup_Instagram_Story.png';
-
+import project_1 from "../../assets/images/1.png";
+import project_2 from "../../assets/images/2.png";
+import project_3 from "../../assets/images/Aesthetic_New_Product_Laptop_Mockup_Instagram_Story.png";
+import project_4 from "../../assets/images/LGL.png";
 
 const Projects = forwardRef((props, componentRef) => {
   const containerRef = useRef();
@@ -14,41 +13,41 @@ const Projects = forwardRef((props, componentRef) => {
     {
       ref: useRef(),
       key: 0,
-      name: "project1",
-      info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora consequuntur illo quae cum ratione? Unde cum quas, recusandae odit, adipisci accusamus voluptate odio sequi hic maxime illum suscipit et tempore.",
+      name: "MYPOWER",
+      info: "Showcasing M-Power, our website highlights their expertise in providing top-quality transformers tailored to customer needs. It emphasizes M-Power's deep knowledge and commitment to excellence, reflecting their mission in a concise, engaging design.",
       image: project_1,
     },
     {
       ref: useRef(),
       key: 1,
-      name: "project2",
-      info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora consequuntur illo quae cum ratione? Unde cum quas, recusandae odit, adipisci accusamus voluptate odio sequi hic maxime illum suscipit et tempore.",
+      name: "Gold Robots",
+      info: "Our website for Gold Robot highlights their expertise as an investment company specializing in the latest market trends. It underscores their commitment to providing high-quality investment opportunities at great value. We also Created an admin panel and Investment panel from which clients could make investments & Admins could handle client investments",
       image: project_2,
     },
     {
       ref: useRef(),
       key: 2,
-      name: "project3",
-      info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora consequuntur illo quae cum ratione? Unde cum quas, recusandae odit, adipisci accusamus voluptate odio sequi hic maxime illum suscipit et tempore.",
+      name: "Data Collection",
+      info: "Our Data Collection website features a versatile, user-friendly dashboard for efficient data management. It's designed for diverse users, offering tools for data submission, retrieval, and analysis through a secure API. Highlighting an intuitive interface, real-time updates, and customizability, the site caters to anyone seeking to harness their data's potential with ease and security.",
       image: project_3,
     },
     {
       ref: useRef(),
       key: 3,
-      name: "project4",
-      info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora consequuntur illo quae cum ratione? Unde cum quas, recusandae odit, adipisci accusamus voluptate odio sequi hic maxime illum suscipit et tempore.",
-      image: abstract_image,
+      name: "LGL (Light Guide in Lund)",
+      info: "Our website for LGL highlights their expertise in optical engineering and hyperspectral imaging, showcasing over a decade of experience in creating custom optomechanical instruments. It emphasizes their commitment to innovation and quality, featuring user-friendly software for enhanced imaging experiences. The site captures LGL's ability to deliver tailor-made, reliable solutions in the field of optical technology.",
+      image: project_4,
     },
   ];
 
   const onClick_left = () => {
     const { current: container } = containerRef;
-    container.scrollBy({ left: -window.innerWidth/2 });
+    container.scrollBy({ left: -window.innerWidth / 2 });
   };
 
   const onClick_right = () => {
     const { current: container } = containerRef;
-    container.scrollBy({ left: window.innerWidth/2 });
+    container.scrollBy({ left: window.innerWidth / 2 });
   };
 
   const onClick_image = (ref) => {
