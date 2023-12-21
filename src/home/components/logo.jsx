@@ -1,5 +1,4 @@
 import { forwardRef } from "react";
-import logo from "../../assets/images/IMG_0578-removebg-preview.png";
 
 const Logo = forwardRef((props, ref) => {
   return (
