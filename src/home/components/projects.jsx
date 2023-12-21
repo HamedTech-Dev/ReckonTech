@@ -2,6 +2,10 @@ import { useRef, forwardRef } from "react";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import chevron from "../../assets/icons/down-arrow.png";
 import abstract_image from "../../assets/images/pexels-dids-3753025.jpg";
+import project_1 from '../../assets/images/1.png';
+import project_2 from '../../assets/images/2.png';
+import project_3 from '../../assets/images/Aesthetic_New_Product_Laptop_Mockup_Instagram_Story.png';
+
 
 const Projects = forwardRef((props, componentRef) => {
   const containerRef = useRef();
@@ -12,21 +16,21 @@ const Projects = forwardRef((props, componentRef) => {
       key: 0,
       name: "project1",
       info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora consequuntur illo quae cum ratione? Unde cum quas, recusandae odit, adipisci accusamus voluptate odio sequi hic maxime illum suscipit et tempore.",
-      image: abstract_image,
+      image: project_1,
     },
     {
       ref: useRef(),
       key: 1,
       name: "project2",
       info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora consequuntur illo quae cum ratione? Unde cum quas, recusandae odit, adipisci accusamus voluptate odio sequi hic maxime illum suscipit et tempore.",
-      image: abstract_image,
+      image: project_2,
     },
     {
       ref: useRef(),
       key: 2,
       name: "project3",
       info: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora consequuntur illo quae cum ratione? Unde cum quas, recusandae odit, adipisci accusamus voluptate odio sequi hic maxime illum suscipit et tempore.",
-      image: abstract_image,
+      image: project_3,
     },
     {
       ref: useRef(),

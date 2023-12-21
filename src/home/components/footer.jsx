@@ -60,7 +60,7 @@ function Footer() {
           }}
         >
           <img src={email_icon} alt="email_icon" className="mr-3 w-[4.5vw] mobile:w-[10vw]" />
-          reckontechco@gmail.com
+          info@reckontech.org
         </span>
       </div>
     </div>
