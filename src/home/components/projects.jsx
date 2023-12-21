@@ -60,11 +60,11 @@ const Projects = forwardRef((props, componentRef) => {
   return (
     <>
       <div
-        className="w-full min-h-full bg-[var(--primary-dark)] flex flex-col justify-start mobile:justify-start overflow-hidden snap-start"
+        className="w-full min-h-full bg-[var(--primary-dark)] flex flex-col justify-center mobile:justify-start overflow-hidden snap-start"
         ref={componentRef}
         id="projects"
       >
-        <h1 className="text-[3vw] text-[var(--dark)] h-1/6 mobile:h-max font-bold text-center mobile:text-[10vw] mt-12">
+        <h1 className="text-[3vw] text-[var(--dark)] h-1/6 mobile:h-max font-bold text-center mobile:text-[10vw] mt-12 ">
           Projects
         </h1>
         <div className="max-w-full h-5/6 flex justify-start items-start align-middle mobile:overflow-y-scroll mobile:overflow-x-hidden">
@@ -105,8 +105,8 @@ const Projects = forwardRef((props, componentRef) => {
                     />
                   </div>
                   {/* content container */}
-                  <div className="flex h-full flex-col w-2/3 mobile:w-full mobile:h-2/3 mobile:px-3 mobile:pb-4 mobile:overflow-y-auto">
-                    <h1 className="text-[3vw] font-semibold mobile:mb-3 mobile:text-[8vw] text-[var(--dark)] mobile:text-center">
+                  <div className="flex h-full flex-col align-middle justify-start pt-12 w-2/3 mobile:w-full mobile:h-2/3 mobile:px-3 mobile:pb-4 mobile:overflow-y-auto">
+                    <h1 className="text-[3vw] font-semibold text-center mobile:mb-3 mobile:text-[8vw] text-[var(--dark)] mobile:text-center">
                       {project.name}
                     </h1>
                     <p className="text-[1.5vw] indent-2 mobile:text-[5vw] text-[var(--dark)]">

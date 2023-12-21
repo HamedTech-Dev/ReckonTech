@@ -13,7 +13,7 @@ const TeamInfo = forwardRef((props, ref) => {
 
   const Hameds_info = {
     name: "Hamed Ghasemi",
-    description: "Bussiness and Marketing Manager",
+    description: "Back-end Developer, Bussiness and Marketing Manager",
   };
 
   const [main, setMain] = useState(Ramins_info);
